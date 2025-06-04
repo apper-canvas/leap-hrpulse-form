@@ -23,20 +23,22 @@ const RecentActivitySection = ({ todayAttendance, recentLeaves }) => {
     </div>
   )
 
-  const renderLeaveItem = (leave, index) => (
-    <div key={index} className="flex items-center justify-between p-3 bg-surface-50 rounded-xl">
+const renderLeaveItem = (leave, index) => (
+    <div key={leave?.Id || index} className="flex items-center justify-between p-3 bg-surface-50 rounded-xl">
       <div className="flex items-center space-x-3">
         <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center">
           <ApperIcon name="User" className="h-4 w-4 text-accent" />
         </div>
         <div>
-          <Text className="font-medium text-surface-900">{leave.employeeName || `Employee ${leave.employeeId}`}</Text>
-          <Text className="text-sm text-surface-600">{leave.leaveType || 'Casual Leave'}</Text>
+          <Text className="font-medium text-surface-900">
+            {leave?.employee_id || leave?.Name || `Employee ${leave?.Id || 'N/A'}`}
+          </Text>
+          <Text className="text-sm text-surface-600">{leave?.leave_type || 'Casual Leave'}</Text>
         </div>
       </div>
       <div className="text-right">
-        <StatusBadge status={leave.status} />
-        <Text className="text-xs text-surface-600 mt-1">{leave.startDate || 'Today'}</Text>
+        <StatusBadge status={leave?.status} />
+        <Text className="text-xs text-surface-600 mt-1">{leave?.start_date || 'Today'}</Text>
       </div>
     </div>
   )

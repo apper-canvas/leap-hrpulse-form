@@ -264,7 +264,7 @@ function RequestSection() {
       {/* Requests List */}
       <div className="space-y-4">
         <h3 className="text-lg font-medium text-surface-900 dark:text-surface-100">
-          Request History ({requests.length})
+Request History ({requests.length})
         </h3>
 
         {requests.map((request) => (
@@ -277,7 +277,7 @@ function RequestSection() {
                   </span>
                   <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(request.status)}`}>
                     {getStatusIcon(request.status)}
-                    <span className="ml-1 capitalize">{request.status.replace('_', ' ')}</span>
+                    <span className="ml-1 capitalize">{request.status?.replace('_', ' ')}</span>
                   </span>
                 </div>
                 <h4 className="text-lg font-semibold text-surface-900 dark:text-surface-100 mb-2">
@@ -286,10 +286,10 @@ function RequestSection() {
                 <p className="text-surface-600 dark:text-surface-400 mb-3">
                   {request.description}
                 </p>
-                <div className="flex items-center gap-4 text-sm text-surface-500 dark:text-surface-400">
+<div className="flex items-center gap-4 text-sm text-surface-500 dark:text-surface-400">
                   <span className="flex items-center">
                     <Calendar className="w-4 h-4 mr-1" />
-                    Submitted: {new Date(request.submittedDate).toLocaleDateString()}
+                    Submitted: {request.submittedDate ? new Date(request.submittedDate).toLocaleDateString() : 'N/A'}
                   </span>
                   {request.responseDate && (
                     <span className="flex items-center">
@@ -299,8 +299,7 @@ function RequestSection() {
                   )}
                 </div>
               </div>
-              
-              {request.status === 'pending' && (
+{request.status === 'pending' && (
                 <button
                   onClick={() => cancelRequest(request.id)}
                   className="text-red-600 hover:text-red-800 text-sm font-medium"

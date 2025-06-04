@@ -1,7 +1,10 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 import AuthHeader from '../components/organisms/AuthHeader'
 import DocumentSection from '../components/organisms/DocumentSection'
 import RequestSection from '../components/organisms/RequestSection'
+import employeeService from '../services/api/employeeService'
 import { FileText, MessageSquare, User, Settings } from 'lucide-react'
 
 function SelfServicePortal() {

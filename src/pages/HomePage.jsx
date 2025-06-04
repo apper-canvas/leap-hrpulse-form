@@ -5,6 +5,7 @@ import ErrorMessage from '../components/atoms/ErrorMessage'
 import employeeService from '../services/api/employeeService'
 import attendanceService from '../services/api/attendanceService'
 import leaveService from '../services/api/leaveService'
+import { toast } from 'react-toastify'
 
 function HomePage() {
   const [employees, setEmployees] = useState([])
@@ -17,6 +18,7 @@ function HomePage() {
   useEffect(() => {
     const loadDashboardData = async () => {
       setLoading(true)
+      setError(null)
       try {
         const [employeesData, attendanceData, leavesData] = await Promise.all([
           employeeService.getAll(),
@@ -27,8 +29,15 @@ function HomePage() {
         setEmployees(employeesData || [])
         setTodayAttendance(attendanceData?.slice(0, 5) || [])
         setRecentLeaves(leavesData?.slice(0, 3) || [])
+        
+        // Show success message only if we got some data
+        if (employeesData?.length > 0 || attendanceData?.length > 0 || leavesData?.length > 0) {
+          toast.success('Dashboard data loaded successfully')
+        }
       } catch (err) {
-        setError(err.message)
+        const errorMessage = err?.message || 'Failed to load dashboard data'
+        setError(errorMessage)
+        toast.error(errorMessage)
       } finally {
         setLoading(false)
       }

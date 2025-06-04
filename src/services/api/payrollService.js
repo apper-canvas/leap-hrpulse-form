@@ -1,55 +1,183 @@
-import payrollData from '../mockData/payroll.json'
+const { ApperClient } = window.ApperSDK;
 
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+const apperClient = new ApperClient({
+  apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+  apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+});
 
-let payrolls = [...payrollData]
+// All fields from payroll table for fetching
+const allPayrollFields = [
+  'Name', 'Tags', 'Owner', 'CreatedOn', 'CreatedBy', 'ModifiedOn', 'ModifiedBy',
+  'month', 'salary', 'employee_id'
+];
+
+// Only updateable fields for create/update operations
+const updateablePayrollFields = [
+  'Name', 'Tags', 'Owner', 'month', 'salary', 'employee_id'
+];
 
 const payrollService = {
-  async getAll() {
-    await delay(350)
-    return [...payrolls]
+  async getAll(filters = {}) {
+    try {
+      const params = {
+        fields: allPayrollFields,
+        pagingInfo: {
+          limit: filters.limit || 100,
+          offset: filters.offset || 0
+        }
+      };
+
+      if (filters.where) {
+        params.where = filters.where;
+      }
+
+      const response = await apperClient.fetchRecords('payroll', params);
+      
+      if (!response || !response.data || response.data.length === 0) {
+        return [];
+      }
+      
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching payrolls:", error);
+      return [];
+    }
   },
 
   async getById(id) {
-    await delay(200)
-    const payroll = payrolls.find(pr => pr.id === id)
-    return payroll ? { ...payroll } : null
+    try {
+      const params = {
+        fields: allPayrollFields
+      };
+
+      const response = await apperClient.getRecordById('payroll', id, params);
+      
+      if (!response || !response.data) {
+        return null;
+      }
+      
+      return response.data;
+    } catch (error) {
+      console.error(`Error fetching payroll with ID ${id}:`, error);
+      return null;
+    }
   },
 
   async getByEmployeeId(employeeId) {
-    await delay(300)
-    return payrolls.filter(pr => pr.employeeId === employeeId).map(pr => ({ ...pr }))
+    try {
+      const params = {
+        fields: allPayrollFields,
+        where: [
+          {
+            fieldName: "employee_id",
+            operator: "EqualTo",
+            values: [employeeId]
+          }
+        ]
+      };
+
+      const response = await apperClient.fetchRecords('payroll', params);
+      
+      if (!response || !response.data || response.data.length === 0) {
+        return [];
+      }
+      
+      return response.data;
+    } catch (error) {
+      console.error(`Error fetching payroll for employee ${employeeId}:`, error);
+      return [];
+    }
   },
 
   async create(payrollData) {
-    await delay(500)
-    const newPayroll = {
-      ...payrollData,
-      id: Date.now(),
-      month: payrollData.month || new Date().toISOString().slice(0, 7)
+    try {
+      // Filter to only include updateable fields
+      const filteredData = {};
+      updateablePayrollFields.forEach(field => {
+        if (payrollData[field] !== undefined) {
+          filteredData[field] = payrollData[field];
+        }
+      });
+
+      // Ensure month is in proper date format
+      if (filteredData.month && typeof filteredData.month === 'string') {
+        if (!filteredData.month.includes('-')) {
+          filteredData.month = new Date().toISOString().slice(0, 7);
+        }
+      }
+
+      const params = {
+        records: [filteredData]
+      };
+
+      const response = await apperClient.createRecord('payroll', params);
+      
+      if (response && response.success && response.results && response.results.length > 0) {
+        const result = response.results[0];
+        if (result.success) {
+          return result.data;
+        } else {
+          throw new Error(result.message || 'Failed to create payroll');
+        }
+      } else {
+        throw new Error('Failed to create payroll');
+      }
+    } catch (error) {
+      console.error("Error creating payroll:", error);
+      throw error;
     }
-    payrolls.push(newPayroll)
-    return { ...newPayroll }
   },
 
   async update(id, payrollData) {
-    await delay(400)
-    const index = payrolls.findIndex(pr => pr.id === id)
-    if (index !== -1) {
-      payrolls[index] = { ...payrolls[index], ...payrollData }
-      return { ...payrolls[index] }
+    try {
+      // Filter to only include updateable fields plus ID
+      const filteredData = { Id: id };
+      updateablePayrollFields.forEach(field => {
+        if (payrollData[field] !== undefined) {
+          filteredData[field] = payrollData[field];
+        }
+      });
+
+      const params = {
+        records: [filteredData]
+      };
+
+      const response = await apperClient.updateRecord('payroll', params);
+      
+      if (response && response.success && response.results && response.results.length > 0) {
+        const result = response.results[0];
+        if (result.success) {
+          return result.data;
+        } else {
+          throw new Error(result.message || 'Failed to update payroll');
+        }
+      } else {
+        throw new Error('Failed to update payroll');
+      }
+    } catch (error) {
+      console.error("Error updating payroll:", error);
+      throw error;
     }
-    throw new Error('Payroll record not found')
   },
 
-  async delete(id) {
-    await delay(300)
-    const index = payrolls.findIndex(pr => pr.id === id)
-    if (index !== -1) {
-      const deleted = payrolls.splice(index, 1)[0]
-      return { ...deleted }
+  async delete(ids) {
+    try {
+      const recordIds = Array.isArray(ids) ? ids : [ids];
+      const params = {
+        RecordIds: recordIds
+      };
+
+      const response = await apperClient.deleteRecord('payroll', params);
+      
+      if (response && response.success) {
+        return true;
+      } else {
+        throw new Error('Failed to delete payroll(s)');
+      }
+    } catch (error) {
+      console.error("Error deleting payroll:", error);
+      throw error;
     }
-    throw new Error('Payroll record not found')
   }
 }
 
