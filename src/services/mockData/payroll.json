@@ -1,0 +1,232 @@
+[
+  {
+    "id": 1,
+    "employeeId": "EMP001",
+    "employeeName": "Rajesh Kumar",
+    "month": "2024-01",
+    "basicSalary": 75000,
+    "allowances": {
+      "hra": 22500,
+      "transport": 1600,
+      "medical": 1250,
+      "special": 5000
+    },
+    "deductions": {
+      "pf": 9000,
+      "esi": 750,
+      "tax": 12500,
+      "others": 500
+    },
+    "netPay": 82600,
+    "pfContribution": 9000,
+    "esiContribution": 750,
+    "grossSalary": 105350
+  },
+  {
+    "id": 2,
+    "employeeId": "EMP002",
+    "employeeName": "Priya Sharma",
+    "month": "2024-01",
+    "basicSalary": 65000,
+    "allowances": {
+      "hra": 19500,
+      "transport": 1600,
+      "medical": 1250,
+      "special": 4000
+    },
+    "deductions": {
+      "pf": 7800,
+      "esi": 650,
+      "tax": 8500,
+      "others": 300
+    },
+    "netPay": 74100,
+    "pfContribution": 7800,
+    "esiContribution": 650,
+    "grossSalary": 91350
+  },
+  {
+    "id": 3,
+    "employeeId": "EMP003",
+    "employeeName": "Amit Patel",
+    "month": "2024-01",
+    "basicSalary": 80000,
+    "allowances": {
+      "hra": 24000,
+      "transport": 1600,
+      "medical": 1250,
+      "special": 6000
+    },
+    "deductions": {
+      "pf": 9600,
+      "esi": 800,
+      "tax": 15000,
+      "others": 600
+    },
+    "netPay": 86850,
+    "pfContribution": 9600,
+    "esiContribution": 800,
+    "grossSalary": 112850
+  },
+  {
+    "id": 4,
+    "employeeId": "EMP004",
+    "employeeName": "Sneha Reddy",
+    "month": "2024-01",
+    "basicSalary": 55000,
+    "allowances": {
+      "hra": 16500,
+      "transport": 1600,
+      "medical": 1250,
+      "special": 3500
+    },
+    "deductions": {
+      "pf": 6600,
+      "esi": 550,
+      "tax": 6000,
+      "others": 250
+    },
+    "netPay": 64450,
+    "pfContribution": 6600,
+    "esiContribution": 550,
+    "grossSalary": 77850
+  },
+  {
+    "id": 5,
+    "employeeId": "EMP005",
+    "employeeName": "Vikram Singh",
+    "month": "2024-01",
+    "basicSalary": 120000,
+    "allowances": {
+      "hra": 36000,
+      "transport": 1600,
+      "medical": 1250,
+      "special": 10000
+    },
+    "deductions": {
+      "pf": 14400,
+      "esi": 0,
+      "tax": 25000,
+      "others": 1000
+    },
+    "netPay": 128450,
+    "pfContribution": 14400,
+    "esiContribution": 0,
+    "grossSalary": 168850
+  },
+  {
+    "id": 6,
+    "employeeId": "EMP006",
+    "employeeName": "Kavitha Nair",
+    "month": "2024-01",
+    "basicSalary": 85000,
+    "allowances": {
+      "hra": 25500,
+      "transport": 1600,
+      "medical": 1250,
+      "special": 6500
+    },
+    "deductions": {
+      "pf": 10200,
+      "esi": 850,
+      "tax": 16000,
+      "others": 700
+    },
+    "netPay": 91100,
+    "pfContribution": 10200,
+    "esiContribution": 850,
+    "grossSalary": 119850
+  },
+  {
+    "id": 7,
+    "employeeId": "EMP007",
+    "employeeName": "Arjun Mishra",
+    "month": "2024-01",
+    "basicSalary": 110000,
+    "allowances": {
+      "hra": 33000,
+      "transport": 1600,
+      "medical": 1250,
+      "special": 8500
+    },
+    "deductions": {
+      "pf": 13200,
+      "esi": 0,
+      "tax": 22000,
+      "others": 900
+    },
+    "netPay": 118250,
+    "pfContribution": 13200,
+    "esiContribution": 0,
+    "grossSalary": 154350
+  },
+  {
+    "id": 8,
+    "employeeId": "EMP008",
+    "employeeName": "Deepika Joshi",
+    "month": "2024-01",
+    "basicSalary": 70000,
+    "allowances": {
+      "hra": 21000,
+      "transport": 1600,
+      "medical": 1250,
+      "special": 4500
+    },
+    "deductions": {
+      "pf": 8400,
+      "esi": 700,
+      "tax": 10000,
+      "others": 400
+    },
+    "netPay": 78850,
+    "pfContribution": 8400,
+    "esiContribution": 700,
+    "grossSalary": 98350
+  },
+  {
+    "id": 9,
+    "employeeId": "EMP009",
+    "employeeName": "Rahul Agarwal",
+    "month": "2024-01",
+    "basicSalary": 95000,
+    "allowances": {
+      "hra": 28500,
+      "transport": 1600,
+      "medical": 1250,
+      "special": 7500
+    },
+    "deductions": {
+      "pf": 11400,
+      "esi": 950,
+      "tax": 18500,
+      "others": 800
+    },
+    "netPay": 101200,
+    "pfContribution": 11400,
+    "esiContribution": 950,
+    "grossSalary": 133850
+  },
+  {
+    "id": 10,
+    "employeeId": "EMP010",
+    "employeeName": "Meera Iyer",
+    "month": "2024-01",
+    "basicSalary": 200000,
+    "allowances": {
+      "hra": 60000,
+      "transport": 1600,
+      "medical": 1250,
+      "special": 20000
+    },
+    "deductions": {
+      "pf": 15000,
+      "esi": 0,
+      "tax": 55000,
+      "others": 2000
+    },
+    "netPay": 210850,
+    "pfContribution": 15000,
+    "esiContribution": 0,
+    "grossSalary": 282850
+  }
+]

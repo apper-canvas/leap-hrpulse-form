@@ -1,0 +1,287 @@
+[
+  {
+    "employeeId": "EMP001",
+    "name": "Rajesh Kumar",
+    "designation": "Senior Software Engineer",
+    "department": "Engineering",
+    "joiningDate": "2022-03-15",
+    "panNumber": "ABCDE1234F",
+    "aadharNumber": "1234 5678 9012",
+    "bankDetails": {
+      "accountNumber": "1234567890",
+      "ifscCode": "HDFC0001234",
+      "bankName": "HDFC Bank"
+    },
+    "manager": "EMP005",
+    "team": "Backend Development",
+    "email": "rajesh.kumar@company.com",
+    "phone": "+91 9876543210",
+    "address": "123 Tech Park, Bangalore, Karnataka 560001"
+  },
+  {
+    "employeeId": "EMP002",
+    "name": "Priya Sharma",
+    "designation": "Frontend Developer",
+    "department": "Engineering",
+    "joiningDate": "2023-01-10",
+    "panNumber": "FGHIJ5678K",
+    "aadharNumber": "2345 6789 0123",
+    "bankDetails": {
+      "accountNumber": "2345678901",
+      "ifscCode": "ICICI0002345",
+      "bankName": "ICICI Bank"
+    },
+    "manager": "EMP005",
+    "team": "Frontend Development",
+    "email": "priya.sharma@company.com",
+    "phone": "+91 9876543211",
+    "address": "456 IT Hub, Pune, Maharashtra 411001"
+  },
+  {
+    "employeeId": "EMP003",
+    "name": "Amit Patel",
+    "designation": "DevOps Engineer",
+    "department": "Engineering",
+    "joiningDate": "2021-11-22",
+    "panNumber": "KLMNO9012P",
+    "aadharNumber": "3456 7890 1234",
+    "bankDetails": {
+      "accountNumber": "3456789012",
+      "ifscCode": "SBI0003456",
+      "bankName": "State Bank of India"
+    },
+    "manager": "EMP006",
+    "team": "Infrastructure",
+    "email": "amit.patel@company.com",
+    "phone": "+91 9876543212",
+    "address": "789 Cyber City, Hyderabad, Telangana 500001"
+  },
+  {
+    "employeeId": "EMP004",
+    "name": "Sneha Reddy",
+    "designation": "UI/UX Designer",
+    "department": "Design",
+    "joiningDate": "2022-08-05",
+    "panNumber": "PQRST3456U",
+    "aadharNumber": "4567 8901 2345",
+    "bankDetails": {
+      "accountNumber": "4567890123",
+      "ifscCode": "AXIS0004567",
+      "bankName": "Axis Bank"
+    },
+    "manager": "EMP007",
+    "team": "Product Design",
+    "email": "sneha.reddy@company.com",
+    "phone": "+91 9876543213",
+    "address": "321 Design District, Chennai, Tamil Nadu 600001"
+  },
+  {
+    "employeeId": "EMP005",
+    "name": "Vikram Singh",
+    "designation": "Engineering Manager",
+    "department": "Engineering",
+    "joiningDate": "2020-06-01",
+    "panNumber": "UVWXY7890Z",
+    "aadharNumber": "5678 9012 3456",
+    "bankDetails": {
+      "accountNumber": "5678901234",
+      "ifscCode": "HDFC0005678",
+      "bankName": "HDFC Bank"
+    },
+    "manager": "EMP010",
+    "team": "Engineering Leadership",
+    "email": "vikram.singh@company.com",
+    "phone": "+91 9876543214",
+    "address": "654 Corporate Plaza, Gurgaon, Haryana 122001"
+  },
+  {
+    "employeeId": "EMP006",
+    "name": "Kavitha Nair",
+    "designation": "QA Lead",
+    "department": "Quality Assurance",
+    "joiningDate": "2021-09-12",
+    "panNumber": "ABCDE1111F",
+    "aadharNumber": "6789 0123 4567",
+    "bankDetails": {
+      "accountNumber": "6789012345",
+      "ifscCode": "ICICI0006789",
+      "bankName": "ICICI Bank"
+    },
+    "manager": "EMP005",
+    "team": "Quality Engineering",
+    "email": "kavitha.nair@company.com",
+    "phone": "+91 9876543215",
+    "address": "987 Tech Valley, Kochi, Kerala 682001"
+  },
+  {
+    "employeeId": "EMP007",
+    "name": "Arjun Mishra",
+    "designation": "Product Manager",
+    "department": "Product",
+    "joiningDate": "2021-04-18",
+    "panNumber": "FGHIJ2222K",
+    "aadharNumber": "7890 1234 5678",
+    "bankDetails": {
+      "accountNumber": "7890123456",
+      "ifscCode": "SBI0007890",
+      "bankName": "State Bank of India"
+    },
+    "manager": "EMP010",
+    "team": "Product Strategy",
+    "email": "arjun.mishra@company.com",
+    "phone": "+91 9876543216",
+    "address": "147 Innovation Hub, Mumbai, Maharashtra 400001"
+  },
+  {
+    "employeeId": "EMP008",
+    "name": "Deepika Joshi",
+    "designation": "Data Scientist",
+    "department": "Analytics",
+    "joiningDate": "2022-12-03",
+    "panNumber": "KLMNO3333P",
+    "aadharNumber": "8901 2345 6789",
+    "bankDetails": {
+      "accountNumber": "8901234567",
+      "ifscCode": "AXIS0008901",
+      "bankName": "Axis Bank"
+    },
+    "manager": "EMP009",
+    "team": "Data Analytics",
+    "email": "deepika.joshi@company.com",
+    "phone": "+91 9876543217",
+    "address": "258 Data Center, Noida, Uttar Pradesh 201301"
+  },
+  {
+    "employeeId": "EMP009",
+    "name": "Rahul Agarwal",
+    "designation": "Analytics Manager",
+    "department": "Analytics",
+    "joiningDate": "2020-02-14",
+    "panNumber": "PQRST4444U",
+    "aadharNumber": "9012 3456 7890",
+    "bankDetails": {
+      "accountNumber": "9012345678",
+      "ifscCode": "HDFC0009012",
+      "bankName": "HDFC Bank"
+    },
+    "manager": "EMP010",
+    "team": "Analytics Leadership",
+    "email": "rahul.agarwal@company.com",
+    "phone": "+91 9876543218",
+    "address": "369 Business Park, Ahmedabad, Gujarat 380001"
+  },
+  {
+    "employeeId": "EMP010",
+    "name": "Meera Iyer",
+    "designation": "VP Engineering",
+    "department": "Engineering",
+    "joiningDate": "2019-01-07",
+    "panNumber": "UVWXY5555Z",
+    "aadharNumber": "0123 4567 8901",
+    "bankDetails": {
+      "accountNumber": "0123456789",
+      "ifscCode": "ICICI0000123",
+      "bankName": "ICICI Bank"
+    },
+    "manager": null,
+    "team": "Executive Leadership",
+    "email": "meera.iyer@company.com",
+    "phone": "+91 9876543219",
+    "address": "741 Executive Tower, Bangalore, Karnataka 560002"
+  },
+  {
+    "employeeId": "EMP011",
+    "name": "Sanjay Gupta",
+    "designation": "HR Manager",
+    "department": "Human Resources",
+    "joiningDate": "2021-07-25",
+    "panNumber": "ABCDE6666F",
+    "aadharNumber": "1357 2468 0192",
+    "bankDetails": {
+      "accountNumber": "1357246801",
+      "ifscCode": "SBI0001357",
+      "bankName": "State Bank of India"
+    },
+    "manager": "EMP010",
+    "team": "HR Operations",
+    "email": "sanjay.gupta@company.com",
+    "phone": "+91 9876543220",
+    "address": "852 Corporate Center, Delhi, Delhi 110001"
+  },
+  {
+    "employeeId": "EMP012",
+    "name": "Anita Desai",
+    "designation": "Finance Analyst",
+    "department": "Finance",
+    "joiningDate": "2023-02-20",
+    "panNumber": "FGHIJ7777K",
+    "aadharNumber": "2468 1357 9024",
+    "bankDetails": {
+      "accountNumber": "2468135790",
+      "ifscCode": "AXIS0002468",
+      "bankName": "Axis Bank"
+    },
+    "manager": "EMP013",
+    "team": "Financial Planning",
+    "email": "anita.desai@company.com",
+    "phone": "+91 9876543221",
+    "address": "963 Finance Plaza, Mumbai, Maharashtra 400002"
+  },
+  {
+    "employeeId": "EMP013",
+    "name": "Suresh Rao",
+    "designation": "Finance Manager",
+    "department": "Finance",
+    "joiningDate": "2020-10-30",
+    "panNumber": "KLMNO8888P",
+    "aadharNumber": "3579 0246 8135",
+    "bankDetails": {
+      "accountNumber": "3579024681",
+      "ifscCode": "HDFC0003579",
+      "bankName": "HDFC Bank"
+    },
+    "manager": "EMP010",
+    "team": "Finance Leadership",
+    "email": "suresh.rao@company.com",
+    "phone": "+91 9876543222",
+    "address": "174 Financial District, Bangalore, Karnataka 560003"
+  },
+  {
+    "employeeId": "EMP014",
+    "name": "Pooja Mehta",
+    "designation": "Marketing Specialist",
+    "department": "Marketing",
+    "joiningDate": "2022-05-14",
+    "panNumber": "PQRST9999U",
+    "aadharNumber": "4680 1357 9246",
+    "bankDetails": {
+      "accountNumber": "4680135792",
+      "ifscCode": "ICICI0004680",
+      "bankName": "ICICI Bank"
+    },
+    "manager": "EMP015",
+    "team": "Digital Marketing",
+    "email": "pooja.mehta@company.com",
+    "phone": "+91 9876543223",
+    "address": "285 Marketing Hub, Pune, Maharashtra 411002"
+  },
+  {
+    "employeeId": "EMP015",
+    "name": "Karthik Pillai",
+    "designation": "Marketing Manager",
+    "department": "Marketing",
+    "joiningDate": "2021-03-08",
+    "panNumber": "UVWXY0000Z",
+    "aadharNumber": "5791 2468 0357",
+    "bankDetails": {
+      "accountNumber": "5791246803",
+      "ifscCode": "SBI0005791",
+      "bankName": "State Bank of India"
+    },
+    "manager": "EMP010",
+    "team": "Marketing Leadership",
+    "email": "karthik.pillai@company.com",
+    "phone": "+91 9876543224",
+    "address": "396 Brand Center, Chennai, Tamil Nadu 600002"
+  }
+]
